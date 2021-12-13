@@ -13,7 +13,7 @@ public class day3 {
         String gamma = "";
         //Get length
         try {
-            File myObj = new File("advent_of_code21/day3/day3pt1.txt");
+            File myObj = new File("C:/Users/Brandy Minx/OneDrive - PCS Software/Documents/Advent of Code/2021/advent_of_code21/day3/day3pt1.txt");
             Scanner myReader = new Scanner(myObj);
                 while (myReader.hasNextLine()) {
                 count += 1;
@@ -26,7 +26,7 @@ public class day3 {
           System.out.println(count);
           //Finish count
         try {
-            File myObj1 = new File("advent_of_code21/day3/day3pt1.txt");
+            File myObj1 = new File("C:/Users/Brandy Minx/OneDrive - PCS Software/Documents/Advent of Code/2021/advent_of_code21/day3/day3pt1.txt");
             Scanner myReader1 = new Scanner(myObj1);
             for(int i = 0; i < count; i++){
                 while (myReader1.hasNextLine()) {
