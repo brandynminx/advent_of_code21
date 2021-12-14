@@ -8,50 +8,44 @@ public class day3 {
         int one = 0;
         int zero = 0;
         char myChar;
-        int count = 0;
         String epsilon = "";
         String gamma = "";
-        //Get length
+        int finalInt = 0;
         try {
-            File myObj = new File("C:/Users/Brandy Minx/OneDrive - PCS Software/Documents/Advent of Code/2021/advent_of_code21/day3/day3pt1.txt");
-            Scanner myReader = new Scanner(myObj);
-                while (myReader.hasNextLine()) {
-                count += 1;
-                }
-            myReader.close();
-          } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-          }
-          System.out.println(count);
-          //Finish count
-        try {
-            File myObj1 = new File("C:/Users/Brandy Minx/OneDrive - PCS Software/Documents/Advent of Code/2021/advent_of_code21/day3/day3pt1.txt");
-            Scanner myReader1 = new Scanner(myObj1);
-            for(int i = 0; i < count; i++){
+        
+            for(int i = 0; i < 12; i++){
+                File myObj1 = new File("day3/day3pt1.txt");
+                Scanner myReader1 = new Scanner(myObj1);
                 while (myReader1.hasNextLine()) {
-                String data1 = myReader1.nextLine();
-                System.out.println(data1.charAt(i));
-                myChar = data1.charAt(i);
-                if(myChar == '1'){
-                    one += 1;
-                } else if (myChar == '0'){
-                    zero += 1;
-                }
+                    String data1 = myReader1.nextLine();
+                    //System.out.println(data1.charAt(i));
+                    myChar = data1.charAt(i);
+                    if(myChar == '1'){
+                        one += 1;
+                    } else if (myChar == '0'){
+                        zero += 1;
+                    }
                 }
                 if(one > zero){
-                    gamma = gamma + one;
-                    epsilon = epsilon + zero;
+                    gamma = gamma + "1";
+                    epsilon = epsilon + "0";
+                    one = 0;
+                    zero = 0;
                 } else if (zero > one) {
-                    gamma = gamma + zero;
-                    epsilon = epsilon + one;
+                    gamma = gamma +  "0";
+                    epsilon = epsilon +  "1";
+                    one = 0;
+                    zero = 0;
                 }
+                myReader1.close();
             }
-            myReader1.close();
+                
           } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
           }
-        System.out.println("epsilon: " + epsilon + ". gamma: " + gamma);
+          finalInt = (Integer.parseInt(epsilon, 2) * Integer.parseInt(gamma, 2));
+          System.out.println("epsilon: " + epsilon + " " + Integer.parseInt(epsilon, 2) + ". gamma: " + gamma + " " + Integer.parseInt(gamma, 2));
+          System.out.println("Answer: " + finalInt);
     }
 }
